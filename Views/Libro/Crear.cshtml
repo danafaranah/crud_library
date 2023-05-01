@@ -1,0 +1,20 @@
+﻿@model LibroViewModel
+
+@{
+    ViewData["Title"] = "Crear Libro";
+}
+
+<h1>Crear Libro</h1>
+<h5>Agrega el nombre de un libro, su autor e ISBN</h5>
+
+<form asp-controller="Libro" asp-action="Crear">
+    <div class="mb-3">
+        <label class="form-label">Ingresar nombre del libro</label>
+        <input type="text" class="form-control" asp-for="GsNombreLibro"/>
+        <label class="form-label">Ingresar nombre del autor</label>
+        <input type="text" class="form-control" asp-for="GsNombreAutor"/>
+        <label class="form-label">Ingresar ISBN</label>
+        <input type="text" class="form-control" asp-for="GsIsbn"/>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Enviar"/>
+</form>

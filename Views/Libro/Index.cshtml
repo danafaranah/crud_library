@@ -1,0 +1,43 @@
+﻿@model IEnumerable<LibroViewModel>
+
+@{
+    ViewData["Title"] = "Libros";
+}
+
+<h1>Crear Libro</h1>
+<h5>Agrega el nombre de un libro, su autor e ISBN</h5>
+
+<a class="btn btn-primary my-5" asp-action="Crear">Agregar Libro</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Autor</th>
+            <th>ISBN</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var libro in Model)
+        {
+            <tr>
+                <td>
+                    @libro.GsNombreLibro
+                </td>
+                <td>
+                    @libro.GsNombreAutor
+                </td>
+                <td>
+                    @libro.GsIsbn
+                </td>
+                <td>
+                    <input type="hidden" value="@libro.GsIdLibro"/>
+                    <a class="btn btn-primary" asp-action="Editar" asp-route-id="@libro.GsIdLibro">Editar</a> 
+                    <a class="btn btn-danger" asp-action="Borrar" asp-route-id="@libro.GsIdLibro">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

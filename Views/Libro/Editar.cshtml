@@ -1,0 +1,22 @@
+﻿@model LibroViewModel
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Editar Libro</h1>
+<h5>Edite los datos que necesite</h5>
+
+<form asp-controller="Libro" asp-action="Editar">
+    <input type="hidden" asp-for="GsIdLibro"/>
+    <div class="mb-3">
+        <label class="form-label">Ingresar nombre del libro</label>
+        <input type="text" class="form-control" asp-for="GsNombreLibro" />
+        <label class="form-label">Ingresar nombre del autor</label>
+        <input type="text" class="form-control" asp-for="GsNombreAutor" />
+        <label class="form-label">Ingresar ISBN</label>
+        <input type="text" class="form-control"asp-for="GsIsbn" />
+    </div>
+    <input type="submit" class="btn btn-primary" value="Actualizar" />
+    <a asp-action="Index" asp-controller="Libro" class="btn btn-secondary">Cancelar</a>
+</form>
